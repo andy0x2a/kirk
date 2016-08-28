@@ -1,0 +1,57 @@
+{  
+   "response":{  
+      "feedMessageResponse":{  
+         "count":2,
+         "feed":{  
+            "id":"0b00GO5eoVWQlMuaefir1Ze2ALDXlQMcd",
+            "name":"Kk",
+            "description":"Kk",
+            "status":"ACTIVE",
+            "usage":0,
+            "daysRange":7,
+            "detailedMessageShown":false,
+            "type":"SHARED_PAGE"
+         },
+         "totalCount":2,
+         "activityCount":0,
+         "messages":{  
+            "message":[  
+               {  
+                  "@clientUnixTime":"0",
+                  "id":615379028,
+                  "messengerId":"0-2827328",
+                  "messengerName":"Kirk Spot",
+                  "unixTime":1472415958,
+                  "messageType":"CUSTOM",
+                  "latitude":49.18385,
+                  "longitude":-123.12029,
+                  "modelId":"SPOT3",
+                  "showCustomMsg":"N",
+                  "dateTime":"2016-08-28T20:25:58+0000",
+                  "messageDetail":"",
+                  "batteryState":"GOOD",
+                  "hidden":0,
+                  "messageContent":"This is the default CUSTOM message. Please update."
+               },
+               {  
+                  "@clientUnixTime":"0",
+                  "id":615352474,
+                  "messengerId":"0-2827328",
+                  "messengerName":"Kirk Spot",
+                  "unixTime":1472412334,
+                  "messageType":"CUSTOM",
+                  "latitude":49.18376,
+                  "longitude":-123.12033,
+                  "modelId":"SPOT3",
+                  "showCustomMsg":"N",
+                  "dateTime":"2016-08-28T19:25:34+0000",
+                  "messageDetail":"",
+                  "batteryState":"GOOD",
+                  "hidden":0,
+                  "messageContent":"This is the default CUSTOM message. Please update."
+               }
+            ]
+         }
+      }
+   }
+}
