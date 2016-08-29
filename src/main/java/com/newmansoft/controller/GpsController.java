@@ -30,6 +30,7 @@ private MessageRepository messageRepository;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     @ResponseBody
+  //  @CrossOrigin(origins = "*")
     public Iterable<Message> get() {
         Iterable<Message> messages = messageRepository.findAll();
         return  messages;

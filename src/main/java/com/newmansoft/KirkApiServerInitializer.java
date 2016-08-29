@@ -17,4 +17,5 @@ public class KirkApiServerInitializer {
     public static void main(String[] args) {
         SpringApplication.run(KirkApiServerInitializer.class, args);
     }
+
 }
