@@ -26,29 +26,29 @@ public class ScheduledTask {
 
 
     //@Scheduled(cron="0 * * *  * * ")
-    @Scheduled(cron="${sched}")
+    @Scheduled(cron="0 0 3,15 * * *")
     public void updateData() {
 
         System.out.println("Updating");
 
-//        SpotMessageClient client = new SpotMessageClient();
-//        client.RetrieveSpotData();   Response response = client.RetrieveSpotData();
-//        if (response != null) {
-//            FeedMessageResponse feedMessageResponse= response.getFeedMessageResponse();
-//
-//            if (feedMessageResponse != null) {
-//                Messages messagesContainer = feedMessageResponse.getMessages();
-//                if (messagesContainer != null) {
-//                    List<Message> messages = messagesContainer.getMessage();
-//                    for (Message message : messages) {
-//                        Message existing =     messageRepository.findOne((message.getId()));
-//                        if (existing == null) {
-//                            messageRepository.save(message);
-//
-//                        }
-//                    }
-//                }
-//            }
-//        }
+        SpotMessageClient client = new SpotMessageClient();
+        client.RetrieveSpotData();   Response response = client.RetrieveSpotData();
+        if (response != null) {
+            FeedMessageResponse feedMessageResponse= response.getFeedMessageResponse();
+
+            if (feedMessageResponse != null) {
+                Messages messagesContainer = feedMessageResponse.getMessages();
+                if (messagesContainer != null) {
+                    List<Message> messages = messagesContainer.getMessage();
+                    for (Message message : messages) {
+                        Message existing =     messageRepository.findOne((message.getId()));
+                        if (existing == null) {
+                            messageRepository.save(message);
+
+                        }
+                    }
+                }
+            }
+        }
     }
 }

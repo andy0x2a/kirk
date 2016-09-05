@@ -56,9 +56,28 @@ private MessageRepository messageRepository;
     }
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public void tempPost() {
+        System.out.println("Updating");
 
+        SpotMessageClient client = new SpotMessageClient();
+        client.RetrieveSpotData();
+        Response response = client.RetrieveSpotData();
+        if (response != null) {
+            FeedMessageResponse feedMessageResponse = response.getFeedMessageResponse();
+
+            if (feedMessageResponse != null) {
+                Messages messagesContainer = feedMessageResponse.getMessages();
+                if (messagesContainer != null) {
+                    List<Message> messages = messagesContainer.getMessage();
+                    for (Message message : messages) {
+                        Message existing = messageRepository.findOne((message.getId()));
+                        if (existing == null) {
+                            messageRepository.save(message);
+
+                        }
+                    }
+                }
+            }
+        }
     }
 
-
-
-}
+    }
