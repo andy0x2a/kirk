@@ -1,10 +1,7 @@
 package com.newmansoft.controller;
 
 
-import com.newmansoft.model.FeedMessageResponse;
-import com.newmansoft.model.Message;
-import com.newmansoft.model.Messages;
-import com.newmansoft.model.Response;
+import com.newmansoft.model.*;
 import com.newmansoft.repository.MessageRepository;
 import com.newmansoft.service.SpotMessageClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,15 +37,16 @@ private MessageRepository messageRepository;
     @RequestMapping(value = "/", method = RequestMethod.GET)
     @ResponseBody
   //  @CrossOrigin(origins = "*")
-    public List<Message> get() {
+    public List<MapPoint> get() {
         long unixTime =  (new Date().getTime()/1000)-(OFFSET);
 
-        List<Message> response = new ArrayList<Message>();
+        List<MapPoint> response = new ArrayList<MapPoint>();
         Iterable<Message> messages = messageRepository.findAll();
         if (messages != null) {
             for (Message message : messages) {
                 if (message.getUnixTime() < unixTime) {
-                    response.add((message));
+                    response.add(new MapPoint(message.getLatitude(),
+                            message.getLongitude()));
                 }
             }
         }
