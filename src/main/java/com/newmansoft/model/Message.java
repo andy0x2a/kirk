@@ -1,5 +1,6 @@
 package com.newmansoft.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
@@ -13,6 +14,8 @@ import java.util.Date;
 @Entity
 @Table(name = "message")
 @JsonRootName(value = "message")
+@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class Message {
 
 
@@ -51,6 +54,8 @@ public class Message {
     private int hidden;
     @Column()
     private String messageContent;
+
+
 
     public String getMessengerId() {
         return messengerId;

@@ -1,10 +1,13 @@
 package com.newmansoft.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.List;
 
 /**
  * Created by user on 8/28/2016.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class FeedMessageResponse {
 
 private int count;
